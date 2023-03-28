@@ -8,7 +8,7 @@ const AddContact = () => {
   const [number, setNumber] = useState('');
   const [name, setName] = useState('');
   const dispatch = useDispatch();
-  const contactSelector = useSelector(state => state.phonebook.contacts);
+  const contactSelector = useSelector(state => state.phonebook.contacts.items);
 
   const onChange = e => {
     switch (e.target.name) {
