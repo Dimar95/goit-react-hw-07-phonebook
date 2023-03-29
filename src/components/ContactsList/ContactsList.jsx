@@ -2,7 +2,7 @@ import ContactsItem from '../ContactsItem/ContactsItem';
 import { Ul } from './ContactsList.styled';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchAllContacts } from '../../redux/slice/sliceContact';
+import { fetchContacts } from '../../redux/slice/sliceContact';
 import Loader from 'components/Loader/Loader';
 import { filterSelector, loaderSelector } from 'redux/selector/selector';
 import { errorRequestelector } from '../../redux/selector/selector';
@@ -20,7 +20,7 @@ const ContactsList = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchAllContacts());
+    dispatch(fetchContacts());
   }, [dispatch]);
 
   return (

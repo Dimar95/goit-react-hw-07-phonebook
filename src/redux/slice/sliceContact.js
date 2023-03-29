@@ -5,7 +5,7 @@ import {
   deleteContactApi,
 } from '../contactsApi/contactsApi';
 
-export const fetchAllContacts = createAsyncThunk(
+export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',
   async (_, { rejectWithValue }) => {
     try {
@@ -59,14 +59,14 @@ export const sliceContact = createSlice({
 
   extraReducers: builder => {
     builder
-      .addCase(fetchAllContacts.fulfilled, (state, action) => {
+      .addCase(fetchContacts.fulfilled, (state, action) => {
         state.contacts.items = action.payload;
         state.contacts.isLoading = false;
       })
-      .addCase(fetchAllContacts.pending, (state, action) => {
+      .addCase(fetchContacts.pending, (state) => {
         state.contacts.isLoading = true;
       })
-      .addCase(fetchAllContacts.rejected, (state, action) => {
+      .addCase(fetchContacts.rejected, (state, action) => {
         state.contacts.error = action.payload;
         state.contacts.isLoading = false;
       })
