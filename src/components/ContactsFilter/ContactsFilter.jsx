@@ -1,10 +1,15 @@
 import { Styled, Label, Input } from './ContactsFilter.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { filterContacts } from '../../redux/slice/sliceContact';
+import { filterSelector } from 'redux/selector/selector';
 
 const ContactsFilter = () => {
   const dispatch = useDispatch();
-  const filterSelector = useSelector(state => state.phonebook.filter);
+  const filterContactsSelector = useSelector(filterSelector);
+
+  const handleChange = e => {
+    dispatch(filterContacts(e.target.value));
+  };
 
   return (
     <Styled>
@@ -13,8 +18,8 @@ const ContactsFilter = () => {
         type="text"
         name="filter"
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-        onChange={e => dispatch(filterContacts(e.currentTarget.value))}
-        value={filterSelector}
+        onChange={handleChange}
+        value={filterContactsSelector}
       />
     </Styled>
   );

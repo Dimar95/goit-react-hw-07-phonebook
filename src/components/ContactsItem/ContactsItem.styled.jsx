@@ -19,4 +19,23 @@ export const Button = styled.button`
   border: transparent;
   cursor: pointer;
   font-size: 24px;
+  border-radius: 4px;
+`;
+
+export const Name = styled.p`
+  padding: 0;
+  margin: 2px;
+  color: #2e2caa;
+  font-weight: 600;
+`;
+export const PhoneStyle = styled.p`
+  padding: 0;
+  margin: 2px;
+`;
+export const ContainerOneContact = styled.div`
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 2px;
+  align-items: flex-start;
 `;

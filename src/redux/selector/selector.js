@@ -1,3 +1,7 @@
-import { useSelector } from 'react-redux';
+export const filterSelector = state => state.phonebook.filter
 
-// const contactSelector = useSelector(state => state.phonebook.contacts.item);
+export const loaderSelector = state => state.phonebook.contacts.isLoading
+
+export const itemsSelector = state => state.phonebook.contacts.items
+
+export const errorRequestelector = state => state.phonebook.contacts.error
