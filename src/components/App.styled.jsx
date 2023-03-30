@@ -7,7 +7,7 @@ export const AppStyled = styled.div`
   padding: 32px;
   text-align: center;
   background-color: #141313;
-  width: 400px;
+  width: 600px;
   font-family: 'Roboto', sans-serif;
   border-radius: 30px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
