@@ -14,7 +14,7 @@ const ContactsList = () => {
 
   const arrayContact = useSelector(state =>
     state.phonebook.contacts.items.filter(({ name }) =>
-      name.toLowerCase().includes(filterContactsSelector)
+      name.toLowerCase().includes(filterContactsSelector.toLowerCase())
     )
   );
 
